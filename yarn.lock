@@ -1030,6 +1030,11 @@ ci-info@^2.0.0:
   resolved "http://registry.npm.taobao.org/ci-info/download/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46"
   integrity sha1-Z6npZL4xpR4V5QENWObxKDQAL0Y=
 
+class-transformer@^0.2.0:
+  version "0.2.0"
+  resolved "http://registry.npm.taobao.org/class-transformer/download/class-transformer-0.2.0.tgz#e54b34112e8ef7f913ef938c81fed8ed949fc9c7"
+  integrity sha1-5Us0ES6O9/kT75OMgf7Y7ZSfycc=
+
 class-utils@^0.3.5:
   version "0.3.6"
   resolved "http://registry.npm.taobao.org/class-utils/download/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
@@ -1039,6 +1044,14 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
+
+class-validator@^0.9.1:
+  version "0.9.1"
+  resolved "http://registry.npm.taobao.org/class-validator/download/class-validator-0.9.1.tgz#d60e58c5d14abca0a41bce38cf792ad4c46d1531"
+  integrity sha1-1g5YxdFKvKCkG844z3kq1MRtFTE=
+  dependencies:
+    google-libphonenumber "^3.1.6"
+    validator "10.4.0"
 
 cli-boxes@^1.0.0:
   version "1.0.0"
@@ -1961,6 +1974,11 @@ globals@^11.1.0:
   version "11.11.0"
   resolved "http://registry.npm.taobao.org/globals/download/globals-11.11.0.tgz#dcf93757fa2de5486fbeed7118538adf789e9c2e"
   integrity sha1-3Pk3V/ot5Uhvvu1xGFOK33ienC4=
+
+google-libphonenumber@^3.1.6:
+  version "3.2.2"
+  resolved "http://registry.npm.taobao.org/google-libphonenumber/download/google-libphonenumber-3.2.2.tgz#3d9d7ba727e99a50812f21b0ed313723b76c5c54"
+  integrity sha1-PZ17pyfpmlCBLyGw7TE3I7dsXFQ=
 
 got@^6.7.1:
   version "6.7.1"
@@ -5061,6 +5079,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+validator@10.4.0:
+  version "10.4.0"
+  resolved "http://registry.npm.taobao.org/validator/download/validator-10.4.0.tgz#ee99a44afb3bb5ed350a159f056ca72a204cfc3c"
+  integrity sha1-7pmkSvs7te01ChWfBWynKiBM/Dw=
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"

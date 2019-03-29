@@ -9,13 +9,13 @@ idea=idea_test
 &description=description_test
 
 ### idea get id
-GET http://localhost:4000/idea/e8b2bd2c-8bd8-4150-9553-0677761963e1 HTTP/1.1
+GET http://localhost:4000/idea/6e2f1d30-f68c-4cb9-96cc-bd48ae40050e HTTP/1.1
 
 ### idea put
-PUt http://localhost:4000/idea/e8b2bd2c-8bd8-4150-9553-0677761963e1 HTTP/1.1
+PUt http://localhost:4000/idea/6e2f1d30-f68c-4cb9-96cc-bd48ae40050e HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 idea=idea_test_put
 
 ### idea delete
-DELETE http://localhost:4000/idea/e8b2bd2c-8bd8-4150-9553-0677761963e1 HTTP/1.1
+DELETE http://localhost:4000/idea/6e2f1d30-f68c-4cb9-96cc-bd48ae40050e HTTP/1.1
