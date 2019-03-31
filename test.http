@@ -1,28 +1,33 @@
 ### idea get
 GET http://localhost:4000/api/idea HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY4MTAxM2JkLTBlNmItNDBlOC04NTk5LTBhNTViZGJjODI1MCIsInVzZXJuYW1lIjoicnlhbiIsImlhdCI6MTU1NDA0NzQzNiwiZXhwIjoxNTU0NjUyMjM2fQ.bnxqEB9bWbroncCJpzbnL6CLKQO9w8mA1WooHytBOFY
 
 ### idea post
 POST http://localhost:4000/api/idea HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY4MTAxM2JkLTBlNmItNDBlOC04NTk5LTBhNTViZGJjODI1MCIsInVzZXJuYW1lIjoicnlhbiIsImlhdCI6MTU1NDA0NzQzNiwiZXhwIjoxNTU0NjUyMjM2fQ.bnxqEB9bWbroncCJpzbnL6CLKQO9w8mA1WooHytBOFY
 content-type: application/x-www-form-urlencoded
 
-idea=idea_test
+idea=idea_test_2
 &description=description_test
 
 ### idea get id
-GET http://localhost:4000/api/idea/6e2f1d30-f68c-4cb9-96cc-bd48ae40050e HTTP/1.1
+GET http://localhost:4000/api/idea/5b026b2a-d0a6-42cf-b99b-a4b2c27073da HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY4MTAxM2JkLTBlNmItNDBlOC04NTk5LTBhNTViZGJjODI1MCIsInVzZXJuYW1lIjoicnlhbiIsImlhdCI6MTU1NDA0NzQzNiwiZXhwIjoxNTU0NjUyMjM2fQ.bnxqEB9bWbroncCJpzbnL6CLKQO9w8mA1WooHytBOFY
 
 ### idea put
-PUt http://localhost:4000/api/idea/6e2f1d30-f68c-4cb9-96cc-bd48ae40050e HTTP/1.1
+PUt http://localhost:4000/api/idea/5b026b2a-d0a6-42cf-b99b-a4b2c27073da HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY4MTAxM2JkLTBlNmItNDBlOC04NTk5LTBhNTViZGJjODI1MCIsInVzZXJuYW1lIjoicnlhbiIsImlhdCI6MTU1NDA0NzQzNiwiZXhwIjoxNTU0NjUyMjM2fQ.bnxqEB9bWbroncCJpzbnL6CLKQO9w8mA1WooHytBOFY
 Content-Type: application/x-www-form-urlencoded
 
 idea=idea_test_put
 
 ### idea delete
-DELETE http://localhost:4000/api/idea/6e2f1d30-f68c-4cb9-96cc-bd48ae40050e HTTP/1.1
+DELETE http://localhost:4000/api/idea/5b026b2a-d0a6-42cf-b99b-a4b2c27073da HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY4MTAxM2JkLTBlNmItNDBlOC04NTk5LTBhNTViZGJjODI1MCIsInVzZXJuYW1lIjoicnlhbiIsImlhdCI6MTU1NDA0NzQzNiwiZXhwIjoxNTU0NjUyMjM2fQ.bnxqEB9bWbroncCJpzbnL6CLKQO9w8mA1WooHytBOFY
 
 ### user showall
 GET http://localhost:4000/api/user HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMzgxNzI3LTc3ZjUtNDdmMC05NTEyLWUxMzRmYzI4YjBmMyIsInVzZXJuYW1lIjoicnlhbjEiLCJpYXQiOjE1NTQwMjI1ODAsImV4cCI6MTU1NDYyNzM4MH0.f4U2ntvnaYODBuJxmK94f1tZR6lN-t_gcwLz8ARKjzM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY4MTAxM2JkLTBlNmItNDBlOC04NTk5LTBhNTViZGJjODI1MCIsInVzZXJuYW1lIjoicnlhbiIsImlhdCI6MTU1NDA0NzQzNiwiZXhwIjoxNTU0NjUyMjM2fQ.bnxqEB9bWbroncCJpzbnL6CLKQO9w8mA1WooHytBOFY
 
 ### user register
 POST http://localhost:4000/register HTtP/1.1
