@@ -20,15 +20,16 @@ idea=idea_test_put
 ### idea delete
 DELETE http://localhost:4000/api/idea/6e2f1d30-f68c-4cb9-96cc-bd48ae40050e HTTP/1.1
 
+### user showall
+GET http://localhost:4000/api/user HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMzgxNzI3LTc3ZjUtNDdmMC05NTEyLWUxMzRmYzI4YjBmMyIsInVzZXJuYW1lIjoicnlhbjEiLCJpYXQiOjE1NTQwMjI1ODAsImV4cCI6MTU1NDYyNzM4MH0.f4U2ntvnaYODBuJxmK94f1tZR6lN-t_gcwLz8ARKjzM
+
 ### user register
 POST http://localhost:4000/register HTtP/1.1
 Content-Type: application/x-www-form-urlencoded
 
-username=ryan
+username=ryan1
 &password=123456
-
-### user showall
-GET http://localhost:4000/api/user HTTP/1.1
 
 ### user login
 POST http://localhost:4000/login HTTP/1.1
