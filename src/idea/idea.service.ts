@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import { IdeaEntity } from './idea.entity';
-import { IdeaDto } from './idea.dto';
+import { IdeaDTO } from './idea.dto';
 
 @Injectable()
 export class IdeaService {
@@ -16,7 +16,7 @@ export class IdeaService {
     return await this.ideaRepository.find();
   }
 
-  async create(data: IdeaDto) {
+  async create(data: IdeaDTO) {
     const idea = this.ideaRepository.create(data);
     await this.ideaRepository.save(idea);
     return idea;
@@ -30,7 +30,7 @@ export class IdeaService {
     return idea;
   }
 
-  async update(id: string, data: Partial<IdeaDto>) {
+  async update(id: string, data: Partial<IdeaDTO>) {
     let idea = await this.ideaRepository.findOne({ where: { id } });
     if (!idea) {
       throw new HttpException('Not Found', HttpStatus.NOT_FOUND);

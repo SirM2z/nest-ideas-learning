@@ -1,6 +1,6 @@
 import { IsString } from 'class-validator';
 
-export class IdeaDto {
+export class IdeaDTO {
   @IsString()
   idea: string;
 
