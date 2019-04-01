@@ -16,7 +16,17 @@ export class IdeaService {
   ) {}
 
   private toResponseObject(idea: IdeaEntity): IdeaRO {
-    return { ...idea, author: idea.author.toResponseObject(false) };
+    const responseObject: any = {
+      ...idea,
+      author: idea.author.toResponseObject(false),
+    };
+    if (responseObject.upvotes) {
+      responseObject.upvotes = responseObject.upvotes.length;
+    }
+    if (responseObject.downvotes) {
+      responseObject.downvotes = responseObject.downvotes.length;
+    }
+    return responseObject;
   }
 
   private ensureOwnership(idea: IdeaEntity, userId: string) {
@@ -26,7 +36,9 @@ export class IdeaService {
   }
 
   async showAll(): Promise<IdeaRO[]> {
-    const ideas = await this.ideaRepository.find({ relations: ['author'] });
+    const ideas = await this.ideaRepository.find({
+      relations: ['author', 'upvotes', 'downvotes'],
+    });
     return ideas.map(idea => this.toResponseObject(idea));
   }
 
