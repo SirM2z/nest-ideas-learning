@@ -97,7 +97,7 @@ export class IdeaService {
   async upvote(id: string, userId: string) {
     const idea = await this.ideaRepository.findOne({
       where: { id },
-      relative: ['upvotes'],
+      relations: ['author'],
     });
     const user = await this.userRepository.findOne({ where: { id: userId } });
     if (idea.upvotes.some(upvote => upvote.id === userId)) {
