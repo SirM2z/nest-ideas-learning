@@ -82,12 +82,90 @@ export class IdeaService {
   }
 
   async destroy(id: string, userId: string) {
-    const idea = await this.ideaRepository.findOne({ where: { id } });
+    const idea = await this.ideaRepository.findOne({
+      where: { id },
+      relations: ['author'],
+    });
     if (!idea) {
       throw new HttpException('Not Found', HttpStatus.NOT_FOUND);
     }
     this.ensureOwnership(idea, userId);
     await this.ideaRepository.delete({ id });
     return { code: 1, message: '删除成功' };
+  }
+
+  async upvote(id: string, userId: string) {
+    const idea = await this.ideaRepository.findOne({
+      where: { id },
+      relative: ['upvotes'],
+    });
+    const user = await this.userRepository.findOne({ where: { id: userId } });
+    if (idea.upvotes.some(upvote => upvote.id === userId)) {
+      throw new HttpException('You have upvoted', HttpStatus.BAD_REQUEST);
+    } else {
+      idea.upvotes.push(user);
+      await this.ideaRepository.save(idea);
+    }
+
+    return idea;
+  }
+
+  async downvote(id: string, userId: string) {
+    const idea = await this.ideaRepository.findOne({
+      where: { id },
+      relations: ['downvote'],
+    });
+    const user = await this.userRepository.findOne({ where: { id: userId } });
+    if (idea.downvotes.some(upvote => upvote.id === userId)) {
+      throw new HttpException('You have downvoted', HttpStatus.BAD_REQUEST);
+    } else {
+      idea.downvotes.push(user);
+      await this.ideaRepository.save(idea);
+    }
+
+    return idea;
+  }
+
+  async bookmark(id: string, userId: string) {
+    const idea = await this.ideaRepository.findOne({ where: { id } });
+    const user = await this.userRepository.findOne({
+      where: { id: userId },
+      relations: ['bookmarks'],
+    });
+
+    if (user.bookmarks.some(bookmark => bookmark.id === idea.id)) {
+      throw new HttpException(
+        'Idea already bookmarked',
+        HttpStatus.BAD_REQUEST,
+      );
+    } else {
+      user.bookmarks.push(idea);
+      await this.userRepository.save(user);
+    }
+
+    return user.toResponseObject(false);
+  }
+
+  async unbookmark(id: string, userId: string) {
+    const idea = await this.ideaRepository.findOne({ where: { id } });
+    const user = await this.userRepository.findOne({
+      where: { id: userId },
+      relations: ['bookmarks'],
+    });
+
+    let bookmarkIndex = -1;
+    if (
+      user.bookmarks.some((bookmark, index) => {
+        bookmarkIndex = index;
+        return bookmark.id === idea.id;
+      })
+    ) {
+      user.bookmarks.splice(bookmarkIndex, 1);
+      await this.userRepository.save(user);
+    } else {
+      throw new HttpException('Idea dont bookmarked', HttpStatus.BAD_REQUEST);
+    }
+
+    return user.toResponseObject(false);
   }
 }
