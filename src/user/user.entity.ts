@@ -12,6 +12,7 @@ import * as bcrypt from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
 import { UserRo } from './user.dto';
 import { IdeaEntity } from '../idea/idea.entity';
+import { CommentEntity } from '../comment/comment.entity';
 
 @Entity('user')
 export class UserEntity {

@@ -1,33 +1,33 @@
 ### idea get showall
 GET http://localhost:4000/api/idea HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMTY3MDYxLWJlMDgtNGM4Ny1hYTdmLWIwMjU5NmE1NmRlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQyMjY1MDQsImV4cCI6MTU1NDgzMTMwNH0.1f4XKXKYj0gqxcQobnj4HefK6HRy4bZKCN968Hp-PTk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY0MTA3MDFiLWUyZDQtNDk5My04ODJlLWNlZjI0MDZkNjBlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQzNzEwMjgsImV4cCI6MTU1NDk3NTgyOH0.a0rNHmhO_RkAZRjb8R-osQKmOXn3rWOjzhyete1j-q8
 
 ### idea post create
 POST http://localhost:4000/api/idea HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMTY3MDYxLWJlMDgtNGM4Ny1hYTdmLWIwMjU5NmE1NmRlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQyMjY1MDQsImV4cCI6MTU1NDgzMTMwNH0.1f4XKXKYj0gqxcQobnj4HefK6HRy4bZKCN968Hp-PTk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY0MTA3MDFiLWUyZDQtNDk5My04ODJlLWNlZjI0MDZkNjBlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQzNzEwMjgsImV4cCI6MTU1NDk3NTgyOH0.a0rNHmhO_RkAZRjb8R-osQKmOXn3rWOjzhyete1j-q8
 content-type: application/x-www-form-urlencoded
 
 idea=idea_test_1
 &description=description_test
 
 ### idea get id read
-GET http://localhost:4000/api/idea/a86b8a0e-0c8f-43c2-adc7-85b01b5a8240 HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMTY3MDYxLWJlMDgtNGM4Ny1hYTdmLWIwMjU5NmE1NmRlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQyMjY1MDQsImV4cCI6MTU1NDgzMTMwNH0.1f4XKXKYj0gqxcQobnj4HefK6HRy4bZKCN968Hp-PTk
+GET http://localhost:4000/api/idea/2894522d-a3f6-44b3-b303-61d1ed5951b2 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY0MTA3MDFiLWUyZDQtNDk5My04ODJlLWNlZjI0MDZkNjBlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQzNzEwMjgsImV4cCI6MTU1NDk3NTgyOH0.a0rNHmhO_RkAZRjb8R-osQKmOXn3rWOjzhyete1j-q8
 
 ### idea put update
-PUt http://localhost:4000/api/idea/a86b8a0e-0c8f-43c2-adc7-85b01b5a8240 HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMTY3MDYxLWJlMDgtNGM4Ny1hYTdmLWIwMjU5NmE1NmRlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQyMjY1MDQsImV4cCI6MTU1NDgzMTMwNH0.1f4XKXKYj0gqxcQobnj4HefK6HRy4bZKCN968Hp-PTk
+PUt http://localhost:4000/api/idea/2894522d-a3f6-44b3-b303-61d1ed5951b2 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY0MTA3MDFiLWUyZDQtNDk5My04ODJlLWNlZjI0MDZkNjBlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQzNzEwMjgsImV4cCI6MTU1NDk3NTgyOH0.a0rNHmhO_RkAZRjb8R-osQKmOXn3rWOjzhyete1j-q8
 Content-Type: application/x-www-form-urlencoded
 
 idea=idea_test_put1
 
 ### idea delete remove
-DELETE http://localhost:4000/api/idea/a86b8a0e-0c8f-43c2-adc7-85b01b5a8240 HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMTY3MDYxLWJlMDgtNGM4Ny1hYTdmLWIwMjU5NmE1NmRlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQyMjY1MDQsImV4cCI6MTU1NDgzMTMwNH0.1f4XKXKYj0gqxcQobnj4HefK6HRy4bZKCN968Hp-PTk
+DELETE http://localhost:4000/api/idea/2894522d-a3f6-44b3-b303-61d1ed5951b2 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY0MTA3MDFiLWUyZDQtNDk5My04ODJlLWNlZjI0MDZkNjBlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQzNzEwMjgsImV4cCI6MTU1NDk3NTgyOH0.a0rNHmhO_RkAZRjb8R-osQKmOXn3rWOjzhyete1j-q8
 
 ### user showall
 GET http://localhost:4000/api/user HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMTY3MDYxLWJlMDgtNGM4Ny1hYTdmLWIwMjU5NmE1NmRlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQyMjY1MDQsImV4cCI6MTU1NDgzMTMwNH0.1f4XKXKYj0gqxcQobnj4HefK6HRy4bZKCN968Hp-PTk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY0MTA3MDFiLWUyZDQtNDk5My04ODJlLWNlZjI0MDZkNjBlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQzNzEwMjgsImV4cCI6MTU1NDk3NTgyOH0.a0rNHmhO_RkAZRjb8R-osQKmOXn3rWOjzhyete1j-q8
 
 ### user register
 POST http://localhost:4000/register HTtP/1.1
@@ -44,18 +44,37 @@ username=username
 &password=password
 
 ### idea post upvote
-POST http://localhost:4000/api/idea/a86b8a0e-0c8f-43c2-adc7-85b01b5a8240/upvote HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMTY3MDYxLWJlMDgtNGM4Ny1hYTdmLWIwMjU5NmE1NmRlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQyMjY1MDQsImV4cCI6MTU1NDgzMTMwNH0.1f4XKXKYj0gqxcQobnj4HefK6HRy4bZKCN968Hp-PTk
+POST http://localhost:4000/api/idea/2894522d-a3f6-44b3-b303-61d1ed5951b2/upvote HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY0MTA3MDFiLWUyZDQtNDk5My04ODJlLWNlZjI0MDZkNjBlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQzNzEwMjgsImV4cCI6MTU1NDk3NTgyOH0.a0rNHmhO_RkAZRjb8R-osQKmOXn3rWOjzhyete1j-q8
 
 ### idea post downvote
-POST http://localhost:4000/api/idea/a86b8a0e-0c8f-43c2-adc7-85b01b5a8240/downvote HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMTY3MDYxLWJlMDgtNGM4Ny1hYTdmLWIwMjU5NmE1NmRlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQyMjY1MDQsImV4cCI6MTU1NDgzMTMwNH0.1f4XKXKYj0gqxcQobnj4HefK6HRy4bZKCN968Hp-PTk
+POST http://localhost:4000/api/idea/2894522d-a3f6-44b3-b303-61d1ed5951b2/downvote HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY0MTA3MDFiLWUyZDQtNDk5My04ODJlLWNlZjI0MDZkNjBlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQzNzEwMjgsImV4cCI6MTU1NDk3NTgyOH0.a0rNHmhO_RkAZRjb8R-osQKmOXn3rWOjzhyete1j-q8
 
 ### idea post bookmark
-POST http://localhost:4000/api/idea/a86b8a0e-0c8f-43c2-adc7-85b01b5a8240/bookmark HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMTY3MDYxLWJlMDgtNGM4Ny1hYTdmLWIwMjU5NmE1NmRlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQyMjY1MDQsImV4cCI6MTU1NDgzMTMwNH0.1f4XKXKYj0gqxcQobnj4HefK6HRy4bZKCN968Hp-PTk
+POST http://localhost:4000/api/idea/2894522d-a3f6-44b3-b303-61d1ed5951b2/bookmark HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY0MTA3MDFiLWUyZDQtNDk5My04ODJlLWNlZjI0MDZkNjBlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQzNzEwMjgsImV4cCI6MTU1NDk3NTgyOH0.a0rNHmhO_RkAZRjb8R-osQKmOXn3rWOjzhyete1j-q8
 
 ### idea delete bookmark
-DELETE http://localhost:4000/api/idea/a86b8a0e-0c8f-43c2-adc7-85b01b5a8240/bookmark HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMTY3MDYxLWJlMDgtNGM4Ny1hYTdmLWIwMjU5NmE1NmRlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQyMjY1MDQsImV4cCI6MTU1NDgzMTMwNH0.1f4XKXKYj0gqxcQobnj4HefK6HRy4bZKCN968Hp-PTk
+DELETE http://localhost:4000/api/idea/2894522d-a3f6-44b3-b303-61d1ed5951b2/bookmark HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY0MTA3MDFiLWUyZDQtNDk5My04ODJlLWNlZjI0MDZkNjBlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQzNzEwMjgsImV4cCI6MTU1NDk3NTgyOH0.a0rNHmhO_RkAZRjb8R-osQKmOXn3rWOjzhyete1j-q8
 
+### comment showCommentsByIdea
+GET http://localhost:4000/api/comment/idea/2894522d-a3f6-44b3-b303-61d1ed5951b2 HTTP/1.1
+
+### comment showCommentsByUser
+GET http://localhost:4000/api/comment/user/f410701b-e2d4-4993-882e-cef2406d60e8 HTTP/1.1
+
+### comment createComment
+POST http://localhost:4000/api/comment/idea/2894522d-a3f6-44b3-b303-61d1ed5951b2 HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY0MTA3MDFiLWUyZDQtNDk5My04ODJlLWNlZjI0MDZkNjBlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQzNzEwMjgsImV4cCI6MTU1NDk3NTgyOH0.a0rNHmhO_RkAZRjb8R-osQKmOXn3rWOjzhyete1j-q8
+
+comment=this_is_a_comment_3
+
+### comment showone comment
+GET http://localhost:4000/api/comment/a58efb7d-6b83-4d14-9baf-430f7597838a HTTP/1.1
+
+### comment remove comment
+DELETE http://localhost:4000/api/comment/f1d63929-5018-459e-a1c6-5f363193f553 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY0MTA3MDFiLWUyZDQtNDk5My04ODJlLWNlZjI0MDZkNjBlOCIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE1NTQzNzEwMjgsImV4cCI6MTU1NDk3NTgyOH0.a0rNHmhO_RkAZRjb8R-osQKmOXn3rWOjzhyete1j-q8
