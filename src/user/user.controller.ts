@@ -5,6 +5,7 @@ import {
   Body,
   UsePipes,
   UseGuards,
+  Query,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserDTO } from './user.dto';
@@ -18,9 +19,12 @@ export class UserController {
 
   @Get('api/user')
   @UseGuards(new AuthGuard())
-  showAllUsers(@User() user) {
+  showAllUsers(
+    @Query('page') page: number,
+    @Query('pageSize') pageSize: number,
+  ) {
     // console.log(user);
-    return this.userService.showAll();
+    return this.userService.showAll(page, pageSize);
   }
 
   @Post('login')

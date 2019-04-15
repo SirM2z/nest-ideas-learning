@@ -12,9 +12,11 @@ export class UserService {
     private userRespository: Repository<UserEntity>,
   ) {}
 
-  async showAll(): Promise<UserRo[]> {
+  async showAll(page: number = 1, pageSize: number = 10): Promise<UserRo[]> {
     const users = await this.userRespository.find({
       relations: ['ideas', 'bookmarks'],
+      take: pageSize,
+      skip: pageSize * (page - 1),
     });
     return users.map(user => user.toResponseObject(false));
   }

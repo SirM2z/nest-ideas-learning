@@ -7,6 +7,7 @@ import {
   Body,
   UsePipes,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { CommentService } from './comment.service';
 import { AuthGuard } from '../shared/auth.guard';
@@ -19,13 +20,21 @@ export class CommentController {
   constructor(private commentService: CommentService) {}
 
   @Get('idea/:id')
-  showCommentsByIdea(@Param('id') idea: string) {
-    return this.commentService.showByIdea(idea);
+  showCommentsByIdea(
+    @Param('id') idea: string,
+    @Query('page') page: number,
+    @Query('pageSize') pageSize: number,
+  ) {
+    return this.commentService.showByIdea(idea, page, pageSize);
   }
 
   @Get('user/:id')
-  showCommentsByUser(@Param('id') user: string) {
-    return this.commentService.showByUser(user);
+  showCommentsByUser(
+    @Param('id') user: string,
+    @Query('page') page: number,
+    @Query('pageSize') pageSize: number,
+  ) {
+    return this.commentService.showByUser(user, page, pageSize);
   }
 
   @Post('idea/:id')
