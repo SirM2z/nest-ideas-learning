@@ -8,10 +8,10 @@ import {
 } from '@nestjs/common';
 
 @Catch()
-export class HttpErrorFilter<T> implements ExceptionFilter {
+export class HttpErrorFilter implements ExceptionFilter {
   catch(exception: HttpException, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
-    const request = ctx.getRequest();
+    const request = ctx.getRequest() || {};
     const response = ctx.getResponse();
     const status = exception.getStatus
       ? exception.getStatus()
@@ -28,11 +28,19 @@ export class HttpErrorFilter<T> implements ExceptionFilter {
           : 'Internal server error',
     };
 
-    Logger.error(
-      `${request.method} ${request.url}`,
-      JSON.stringify(errorResponse),
-      'ExceptionFilter',
-    );
+    if (status === HttpStatus.INTERNAL_SERVER_ERROR) {
+      Logger.error(
+        `${request.method} ${request.url}`,
+        exception.stack,
+        'ExceptionFilter',
+      );
+    } else {
+      Logger.error(
+        `${request.method} ${request.url}`,
+        JSON.stringify(errorResponse),
+        'ExceptionFilter',
+      );
+    }
 
     response.status(status).json(errorResponse);
   }
