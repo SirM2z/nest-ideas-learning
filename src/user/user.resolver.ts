@@ -5,10 +5,13 @@ import {
   Parent,
   ResolveProperty,
   Mutation,
+  Context,
 } from '@nestjs/graphql';
+import { UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CommentService } from '../comment/comment.service';
 import { UserDTO } from './user.dto';
+import { AuthGuard } from '../shared/auth.guard';
 
 @Resolver('User')
 export class UserResolver {
@@ -20,6 +23,18 @@ export class UserResolver {
   @Query()
   users(@Args('page') page: number, @Args('pageSize') pageSize: number) {
     return this.userService.showAll(page, pageSize);
+  }
+
+  @Query()
+  user(@Args('username') username: string) {
+    return this.userService.read(username);
+  }
+
+  @Query()
+  @UseGuards(new AuthGuard())
+  whoami(@Context('user') user) {
+    const { username } = user;
+    return this.userService.read(username);
   }
 
   @Mutation()
