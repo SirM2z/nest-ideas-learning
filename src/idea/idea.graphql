@@ -1,5 +1,5 @@
 type Idea {
-  id: ID!
+  id: ID
   updated: String!
   created: String!
   idea: String!
@@ -10,6 +10,22 @@ type Idea {
   comments: [Comment!]
 }
 
+type IdeaRes {
+  code: Int!
+  message: String!
+}
+
 type Query {
   ideas(page: Int, pageSize: Int, newest: Boolean): [Idea!]
+  idea(id: ID!): Idea!
+}
+
+type Mutation {
+  createIdea(idea: String!, description: String!): Idea!
+  updateIdea(id: ID!, idea: String, description: String): Idea!
+  deleteIdea(id: ID!): IdeaRes!
+  upvote(id: ID!): Idea!
+  downvote(id: ID!): Idea!
+  bookmark(id: ID!): User!
+  unbookmark(id: ID!): User!
 }
