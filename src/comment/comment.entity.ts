@@ -7,7 +7,7 @@ import {
   JoinTable,
 } from 'typeorm';
 import { UserEntity } from '../user/user.entity';
-import { IdeaEntity } from 'src/idea/idea.entity';
+import { IdeaEntity } from '../idea/idea.entity';
 
 @Entity('comment')
 export class CommentEntity {
