@@ -1,4 +1,10 @@
 require('dotenv').config();
+const path = require('path');
+
+const entitiesPath =
+  process.env.NODE_ENV === 'dist'
+    ? path.join(__dirname, '/dist/**/*.entity.js')
+    : path.join(__dirname, 'src/**/*.entity.ts');
 
 module.exports = {
   name: 'default',
@@ -11,5 +17,5 @@ module.exports = {
   synchronize: true,
   dropSchema: false,
   logging: true,
-  entities: ['src/**/*.entity.ts', 'dist/**/*.entity.js'],
+  entities: [entitiesPath],
 };
