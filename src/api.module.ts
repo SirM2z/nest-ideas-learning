@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
+import { MulterModule } from '@nestjs/platform-express';
 
 import { IdeaModule } from './idea/idea.module';
 import { UserModule } from './user/user.module';
@@ -8,7 +9,14 @@ import { HttpErrorFilter } from './shared/http-error.filter';
 import { LoggingInterceptor } from './shared/logging.interceptor';
 
 @Module({
-  imports: [IdeaModule, UserModule, CommentModule],
+  imports: [
+    MulterModule.register({
+      dest: process.env.UPLOAD_PATH,
+    }),
+    IdeaModule,
+    UserModule,
+    CommentModule,
+  ],
   providers: [
     {
       provide: APP_FILTER,
